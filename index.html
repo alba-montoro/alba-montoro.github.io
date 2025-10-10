@@ -22,6 +22,7 @@
                     <li><a href="#inicio">Inicio</a></li>
                     <li><a href="#menu">Menú</a></li>
                     <li><a href="#galeria">Galería</a></li>
+                    <li><a href="#reseñas">Reseñas</a></li>
                     <li><a href="#contacto">Contacto</a></li>
                 </ul>
             </nav>
@@ -124,6 +125,59 @@
         <figure>
           <img src="images/desayuno2.png" alt="Desayuno especial">
         </figure>
+        <figure>
+          <img src="images/personas.png" alt="Personas en la cafetería">
+        </figure>
+        <figure>
+          <img src="images/camarera.png" alt="Camarera en la cafetería">
+        </figure>
+      </div>
+      <div class="galeria-vermas">
+        <button class="vermas-btn" onclick="alert('Próximamente más fotos de nuestras instalaciones')">Ver más</button>
+      </div>
+    </section>
+    <section class="reseñas" id="reseñas">
+      <h2>Reseñas</h2>
+      <div class="reseñas-contenido">
+        <div class="reseña">
+          <span class="reseñas-estrellas">★★★★★</span>
+          <p>¡Un lugar encantador! El café y la repostería son deliciosos, y el ambiente es muy acogedor.</p>
+          <span class="reseña-autor">- Alba M.</span>
+        </div>
+        <div class="reseña">
+          <span class="reseñas-estrellas">★★★★★</span>
+          <p>Perfecto para desayunar y pasar la tarde. El personal es muy amable y atento.</p>
+          <span class="reseña-autor">- Juan P.</span>
+        </div>
+        <div class="reseña">
+          <span class="reseñas-estrellas">★★★★★</span>
+          <p>Me encanta la decoración vintage y la variedad de opciones saludables en la carta.</p>
+          <span class="reseña-autor">- Marta G.</span>
+        </div>
+      </div>
+      <div class="reseñas-add-btn-container">
+        <button class="reseñas-add-btn" onclick="document.getElementById('reseña-modal').style.display='flex'">Añadir una reseña</button>
+      </div>
+      <div id="reseña-modal" class="reseña-modal">
+        <div class="reseña-modal-content">
+          <span class="reseña-modal-close" onclick="document.getElementById('reseña-modal').style.display='none'">&times;</span>
+          <h3>Añadir una reseña</h3>
+          <form class="reseña-form">
+            <label for="reseña-nombre">Nombre</label>
+            <input type="text" id="reseña-nombre" name="nombre" required>
+            <label for="reseña-comentario">Comentario</label>
+            <textarea id="reseña-comentario" name="comentario" rows="3" required></textarea>
+            <label for="reseña-estrellas">Estrellas</label>
+            <select id="reseña-estrellas" name="estrellas" required>
+              <option value="5">★★★★★</option>
+              <option value="4">★★★★</option>
+              <option value="3">★★★</option>
+              <option value="2">★★</option>
+              <option value="1">★</option>
+            </select>
+            <button type="submit" class="reseñas-add-btn">Enviar reseña</button>
+          </form>
+        </div>
       </div>
     </section>
     <footer id="contacto">
@@ -146,5 +200,27 @@
     <p style="margin-top:1em;">&copy; 2025 MyCafé. Todos los derechos reservados.</p>
   </div>
 </footer>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var form = document.querySelector('.reseña-form');
+  if(form) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      // Guardar datos en localStorage
+      const nombre = document.getElementById('reseña-nombre').value;
+      const comentario = document.getElementById('reseña-comentario').value;
+      const estrellas = document.getElementById('reseña-estrellas').value;
+      const nuevaReseña = { nombre, comentario, estrellas };
+      let reseñas = JSON.parse(localStorage.getItem('reseñasWebCafe') || '[]');
+      reseñas.push(nuevaReseña);
+      localStorage.setItem('reseñasWebCafe', JSON.stringify(reseñas));
+      // Mensaje de confirmación
+      alert('Tu reseña se ha enviado y se ha solicitado permiso al administrador de la web.');
+      document.getElementById('reseña-modal').style.display = 'none';
+      form.reset();
+    });
+  }
+});
+</script>
 </body>
 </html>

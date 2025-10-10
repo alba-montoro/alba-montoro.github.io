@@ -553,8 +553,147 @@ footer .footer-contacto h2 {
 .galeria-imagenes figure:hover img {
   filter: brightness(1.08) saturate(1.1);
 }
+.reseñas {
+  max-width: 900px;
+  margin: 3em auto 0 auto;
+  background: rgba(255,255,255,0.75);
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(124,92,59,0.08);
+  padding: 2em 2em 1.5em 2em;
+  position: relative;
+  z-index: 2;
+  animation: fadeInUp 1.2s;
+}
+.reseñas h2 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2em;
+  color: var(--color-accent);
+  letter-spacing: 1px;
+  text-align: center;
+  margin-top: 0;
+}
+.reseñas-contenido {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;
+  justify-content: center;
+  margin-top: 2em;
+}
+.reseña {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(124,92,59,0.10);
+  padding: 1.5em 1.2em 1.2em 1.2em;
+  min-width: 220px;
+  max-width: 260px;
+  flex: 1 1 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  animation: fadeInUp 1.2s;
+}
+.reseña:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(124,92,59,0.13);
+}
+.reseñas-estrellas {
+  color: #f7c800;
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+  letter-spacing: 2px;
+}
+.reseña-autor {
+  font-size: 0.95em;
+  color: var(--color-detail);
+  margin-top: 0.7em;
+}
+.reseñas-add-btn-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2em;
+}
+.reseñas-add-btn {
+  background: var(--color-accent);
+  color: #fff;
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.2em;
+  padding: 0.7em 2em;
+  border: none;
+  border-radius: 30px;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  letter-spacing: 1px;
+}
+.reseñas-add-btn:hover {
+  background: var(--color-detail);
+  color: #fff;
+  transform: scale(1.05);
+}
+.reseña-modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.25);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.reseña-modal-content {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 24px rgba(124,92,59,0.18);
+  padding: 2em 2em 1.5em 2em;
+  min-width: 320px;
+  max-width: 90vw;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.reseña-modal-close {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  font-size: 2em;
+  color: var(--color-accent);
+  cursor: pointer;
+  font-weight: bold;
+}
+.reseña-form label {
+  font-size: 1em;
+  color: var(--color-text);
+  margin-top: 1em;
+  margin-bottom: 0.2em;
+  font-family: 'Quicksand', Arial, sans-serif;
+  align-self: flex-start;
+}
+.reseña-form input,
+.reseña-form textarea,
+.reseña-form select {
+  width: 100%;
+  padding: 0.7em 1em;
+  border: 1.5px solid var(--color-accent);
+  border-radius: 10px;
+  font-size: 1em;
+  font-family: 'Quicksand', Arial, sans-serif;
+  background: #fff;
+  color: var(--color-text);
+  box-sizing: border-box;
+  transition: border 0.2s, box-shadow 0.2s;
+  margin-bottom: 0.7em;
+}
+.reseña-form input:focus,
+.reseña-form textarea:focus,
+.reseña-form select:focus {
+  border: 1.5px solid var(--color-detail);
+  box-shadow: 0 2px 8px rgba(124,92,59,0.10);
+  outline: none;
+}
 @media (max-width: 900px) {
-  section, .menu-lista, .galeria { max-width: 98vw; }
+  section, .menu-lista, .galeria, .reseñas { max-width: 98vw; }
 }
 @media (max-width: 700px) {
   .header-layout {
@@ -583,6 +722,10 @@ footer .footer-contacto h2 {
     height: 48vw;
     max-width: 340px;
     max-height: 340px;
+  }
+  .reseña {
+    min-width: 90vw;
+    max-width: 98vw;
   }
 }
 @media (max-width: 600px) {
@@ -632,4 +775,27 @@ footer .footer-contacto h2 {
   background: rgba(255,255,255,0.75) !important;
   box-shadow: 0 2px 16px rgba(124,92,59,0.08);
   border-radius: 16px;
+}
+.galeria-vermas {
+  display: flex;
+  justify-content: center;
+  margin-top: 2em;
+}
+.vermas-btn {
+  background: var(--color-accent);
+  color: #fff;
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.2em;
+  padding: 0.7em 2em;
+  border: none;
+  border-radius: 30px;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  letter-spacing: 1px;
+}
+.vermas-btn:hover {
+  background: var(--color-detail);
+  color: #fff;
+  transform: scale(1.05);
 }
