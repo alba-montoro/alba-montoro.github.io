@@ -3,60 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menú de Navegación</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: #f4f4f4;
-        }
-        nav {
-            background: #0a7ac5;
-            color: #fff;
-            padding: 0.5em 0;
-        }
-        nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-        }
-        nav ul li {
-            margin: 0 1em;
-        }
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.2s;
-        }
-        nav ul li a:hover {
-            color: #ffd700;
-        }
-        .container {
-            max-width: 800px;
-            margin: 2em auto;
-            background: #fff;
-            padding: 2em;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(13, 13, 14, 0.932);
-        }
-    </style>
+    <title>MyCafé</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#servicios">Servicios</a></li>
-            <li><a href="#sobre">Sobre mí</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-        </ul>
-    </nav>
-    <div class="container">
-        <h1>Bienvenido</h1>
-        <p>Este es un ejemplo de página HTML con un menú de navegación.</p>
+    <header class="main-header">
+        <div class="header-bg"></div>
+        <div class="header-layout">
+            <nav class="main-nav">
+                <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+                <label for="nav-toggle" class="nav-toggle-label">
+                    <span></span>
+                </label>
+                <ul class="nav-menu">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#menu">Menú</a></li>
+                    <li><a href="#galeria">Galería</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="header-center">
+                <h1 class="brand-title">MyCafé</h1>
+                <a href="#contacto" class="cta-btn">Contáctanos</a>
+            </div>
+        </div>
+    </header>
+    
+       
+    <section class="servicios" id="servicios">
+        <h2>Servicios</h2>
+        <div class="servicios-tarjetas">
+            <div class="servicio-tarjeta">
+                <span class="servicio-icono">☕</span>
+                <h3>Café de especialidad</h3>
+                <p>Bebidas artesanales preparadas con granos seleccionados y baristas expertos.</p>
+            </div>
+            <div class="servicio-tarjeta">
+                <span class="servicio-icono">🍰</span>
+                <h3>Desayunos y repostería</h3>
+                <p>Repostería casera y desayunos frescos para empezar el día con energía.</p>
+            </div>
+            <div class="servicio-tarjeta">
+                <span class="servicio-icono">🌱</span>
+                <h3>Opciones veganas y sin gluten</h3>
+                <p>Menú inclusivo para todos los gustos y necesidades alimentarias.</p>
+            </div>
+            <div class="servicio-tarjeta">
+                <span class="servicio-icono">💻</span>
+                <h3>WiFi y enchufes</h3>
+                <p>Espacio ideal para trabajar o estudiar, con conexión y comodidad.</p>
+            </div>
+            <div class="servicio-tarjeta">
+                <span class="servicio-icono">🏡</span>
+                <h3>Ambiente vintage</h3>
+                <p>Decoración acogedora y atmósfera única para relajarte o socializar.</p>
+            </div>
+            <div class="servicio-tarjeta">
+                <span class="servicio-icono">🌞</span>
+                <h3>Terraza y climatización</h3>
+                <p>Disfruta tanto en interior como en nuestra terraza exterior.</p>
+            </div>
+            <div class="servicio-tarjeta">
+                <span class="servicio-icono">🎉</span>
+                <h3>Eventos y reservas</h3>
+                <p>Organiza celebraciones privadas o reuniones de grupo en un entorno especial.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="servicios" id="menu">
+        <h2>Menú de la Carta</h2>
+        <div class="menu-lista">
+            <div class="menu-item">
+                <h3>Cafés</h3>
+                <div class="menu-productos">Espresso, Americano, Capuccino, Latte, Mocca</div>
+                <div class="menu-desc">Granos seleccionados, aroma intenso y cremosidad perfecta en cada taza.</div>
+            </div>
+            <div class="menu-item">
+                <h3>Tés e infusiones</h3>
+                <div class="menu-productos">Té verde, negro, rooibos, infusiones naturales</div>
+                <div class="menu-desc">Infusiones fragantes y reconfortantes, servidas con mimo y dulces aromas.</div>
+            </div>
+            <div class="menu-item">
+                <h3>Bollería y tartas</h3>
+                <div class="menu-productos">Croissants, carrot cake, brownie, bizcocho casero</div>
+                <div class="menu-desc">Recién horneados, esponjosos y con el toque casero que enamora cada bocado.</div>
+            </div>
+            <div class="menu-item">
+                <h3>Desayunos</h3>
+                <div class="menu-productos">Tostadas, bowls de yogur y fruta, pancakes</div>
+                <div class="menu-desc">Comienza el día con energía: opciones frescas, saludables y llenas de sabor.</div>
+            </div>
+            <div class="menu-item">
+                <h3>Bebidas frías</h3>
+                <div class="menu-productos">Zumos naturales, smoothies, refrescos artesanos</div>
+                <div class="menu-desc">Refrescantes, coloridas y preparadas al momento con fruta de temporada.</div>
+            </div>
+            <div class="menu-item">
+                <h3>Opciones especiales</h3>
+                <div class="menu-productos">Veganas y sin gluten</div>
+                <div class="menu-desc">Delicias para todos: sabor y textura sin renunciar a lo saludable.</div>
+            </div>
+        </div>
+    </section>
+    <section class="galeria" id="galeria">
+      <h2>Galería</h2>
+      <div class="galeria-imagenes">
+        <figure>
+          <img src="images/interior.png" alt="Interior de la cafetería">
+        </figure>
+        <figure>
+          <img src="images/vertical_exterior.png" alt="Exterior vertical de la cafetería">
+        </figure>
+        <figure>
+          <img src="images/desayuno.png" alt="Desayuno MyCafé">
+        </figure>
+        <figure>
+          <img src="images/desayuno2.png" alt="Desayuno especial">
+        </figure>
+      </div>
+    </section>
+    <footer id="contacto">
+  <div class="footer-contacto">
+    <h2>Contacto</h2>
+    <form class="contact-form">
+      <label for="nombre">Nombre</label>
+      <input type="text" id="nombre" name="nombre" required>
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+      <label for="mensaje">Mensaje</label>
+      <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+    <div class="footer-social">
+      <a href="#" title="Instagram"><img src="images/instagram.jpg" alt="Instagram" style="height:28px;"></a>
+      <a href="#" title="Facebook"><img src="images/facebook.jpg" alt="Facebook" style="height:28px;"></a>
+      <a href="#" title="Twitter"><img src="images/twitter.jpg" alt="Twitter" style="height:28px;"></a>
     </div>
+    <p style="margin-top:1em;">&copy; 2025 MyCafé. Todos los derechos reservados.</p>
+  </div>
+</footer>
 </body>
 </html>
